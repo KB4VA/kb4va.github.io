@@ -142,12 +142,14 @@ class Store {
             useSpec: false,
             specification: {}
         })
-        this.vegaSpecInter = JSON.stringify({facet: {},spec:{
-            "mark": "bar",
-            "encoding": {
-                "x": "*"
+        this.vegaSpecInter = JSON.stringify({
+            "x": {
+                "type":"*"
+            },
+            "y": {
+                "type":"*"
             }
-        }}, null, 4);
+        }, null, 4);
         this.generateRecommendationsFromQueryParams();
     }
 
