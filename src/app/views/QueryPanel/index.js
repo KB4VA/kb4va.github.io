@@ -42,7 +42,7 @@ function QueryPanel({store}) {
                             onChange={e => store.setQueryParams({targets: e.target.value})}
                             options={R.const.targets}
                             twolevel/>
-                <ItemSelect title={"Composition"}
+                <ItemSelect title={"Layout"}
                             value={store.queryParams.compositions}
                             onChange={e => store.setQueryParams({compositions: e.target.value})}
                             options={R.const.compositions}/>
