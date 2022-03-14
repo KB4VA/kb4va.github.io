@@ -195,7 +195,7 @@ class Store {
             this.endWait();
             // console.log(res)
             // res.sort((a, b) => b.rankScore.sum - a.rankScore.sum);
-            this.setRecommendations(res.slice(0, 48).map(d => ({ ...d, condition })));
+            this.setRecommendations(res.map(d => ({ ...d, condition })));
         })
     }
 

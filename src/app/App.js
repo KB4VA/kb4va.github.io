@@ -51,7 +51,7 @@ function App({store}) {
                        bgColor={theme.palette.primary.light}>
                     <QueryPanel/>
                 </Panel>
-                <Panel title="Visualization Recommendations"
+                <Panel title={`Retrieved Visualizations: ${store.recommendations.length} found`}
                        pos={{
                            top: theme.spacing(1),
                            bottom: `calc(${theme.spacing(2)}px + 30%)`,

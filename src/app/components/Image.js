@@ -3,6 +3,7 @@ import {makeStyles, Typography} from "@material-ui/core";
 import {inject, observer} from "mobx-react";
 import clsx from "clsx";
 import useImageSize from "../hooks/useImageSize";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const useStyles = makeStyles(theme => ({
     image: {
@@ -50,7 +51,7 @@ function Image({src, alt, className, onLoad, type = "fill", overlay, ...props}) 
                 ref={cRef}>
         {!loaded && <Typography className={classes.loading}>loading</Typography>}
         <div className={classes.imgBlock}>
-            <img src={src}
+            <LazyLoadImage src={src}
                  alt={alt}
                  draggable={false}
                  className={clsx(classes.img, {
@@ -62,6 +63,7 @@ function Image({src, alt, className, onLoad, type = "fill", overlay, ...props}) 
                      onLoad && onLoad(e);
                  }}
                  {...props}/>
+                
             {overlay}
         </div>
     </div>
