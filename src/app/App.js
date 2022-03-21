@@ -35,8 +35,8 @@ function App({store}) {
             <Toolbar variant="dense">
                 <Typography variant="h5" color="inherit" component="div">{R.strings.systemName}</Typography>
                 <div className={classes.flex}/>
-                <Button color={"inherit"} onClick={store.importViews}>Load</Button>
-                <Button color={"inherit"} onClick={store.exportViews}>Save</Button>
+                {/* <Button color={"inherit"} onClick={store.importViews}>Load</Button>
+                <Button color={"inherit"} onClick={store.exportViews}>Save</Button> */}
             </Toolbar>
         </AppBar>
         <div className={classes.content}>
@@ -54,14 +54,14 @@ function App({store}) {
                 <Panel title={`Retrieved Visualizations: ${store.recommendations.length} found`}
                        pos={{
                            top: theme.spacing(1),
-                           bottom: `calc(${theme.spacing(2)}px + 30%)`,
+                           bottom: `${theme.spacing(2)}px`,
                            left: theme.spacing(2) + 500,
                            right: theme.spacing(1),
                        }}
                        bgColor={theme.palette.primary.light}>
                     <RecommendationsPanel/>
                 </Panel>
-                <Panel title="Selected Visualizations"
+                {/* <Panel title="Selected Visualizations"
                        pos={{
                            height: '30%',
                            bottom: theme.spacing(1),
@@ -69,7 +69,7 @@ function App({store}) {
                            right: theme.spacing(1),
                        }}>
                     <ViewList/>
-                </Panel>
+                </Panel> */}
             </AspectRatioKeeper>
         </div>
         <FigureViewer/>

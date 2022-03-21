@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     },
     box: {
         position: 'absolute',
-        backgroundColor: alpha(theme.palette.secondary.main, 0.5),
+        backgroundColor: alpha(theme.palette.primary.main, 0.8),
     }
 }));
 
