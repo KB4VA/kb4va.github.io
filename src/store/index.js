@@ -83,6 +83,10 @@ class Store {
     showTableViewer = () => this.isTableViewerOpen = true;
     closeTableViewer = () => this.isTableViewerOpen = false;
 
+    isReadMeOpen = true
+    handleReadMeOpen = () => this.isReadMeOpen = true;
+    handleReadMeClose = () => this.isReadMeOpen = false;
+
 
     
     vegaSpecInter = JSON.stringify({

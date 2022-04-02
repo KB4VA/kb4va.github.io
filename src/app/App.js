@@ -1,14 +1,15 @@
-import {inject, observer} from "mobx-react";
+import { inject, observer } from "mobx-react";
 import FigureViewer from "./views/FigureViewer";
-import {AppBar, Button, makeStyles, Toolbar, Typography, useTheme} from "@material-ui/core";
+import { AppBar, Button, makeStyles, Toolbar, Typography, useTheme } from "@material-ui/core";
+// import DialogContent from '@mui/material/DialogContent';
+// import DialogContentText from '@mui/material/DialogContentText';
 import QueryPanel from "./views/QueryPanel";
 import RecommendationsPanel from "./views/RecommendationsPanel";
-import ViewList from "./views/ViewList";
-import TableViewer from "./views/TableViewer";
 import Panel from "./components/Panel";
 import R from "../res";
 import AspectRatioKeeper from "./components/AspectRatioKeeper";
 import Waiting from "./components/Waiting";
+import Introduction from "./views/Introduction";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function App({store}) {
+function App({ store }) {
     const classes = useStyles();
     const theme = useTheme();
 
@@ -34,32 +35,32 @@ function App({store}) {
         <AppBar position="static">
             <Toolbar variant="dense">
                 <Typography variant="h5" color="inherit" component="div">{R.strings.systemName}</Typography>
-                <div className={classes.flex}/>
-                {/* <Button color={"inherit"} onClick={store.importViews}>Load</Button>
-                <Button color={"inherit"} onClick={store.exportViews}>Save</Button> */}
+                <div className={classes.flex} />
+                <Button color={"inherit"} onClick={store.handleReadMeOpen}>ReadMe</Button>
+                <Introduction/>
             </Toolbar>
         </AppBar>
         <div className={classes.content}>
             <AspectRatioKeeper ratio={1920 / 1032}>
                 <Panel title="Query Panel"
-                       pos={{
-                           top: theme.spacing(1),
-                           bottom: theme.spacing(1),
-                           left: theme.spacing(1),
-                           width: 500,
-                       }}
-                       bgColor={theme.palette.primary.light}>
-                    <QueryPanel/>
+                    pos={{
+                        top: theme.spacing(1),
+                        bottom: theme.spacing(1),
+                        left: theme.spacing(1),
+                        width: 500,
+                    }}
+                    bgColor={theme.palette.primary.light}>
+                    <QueryPanel />
                 </Panel>
                 <Panel title={`Retrieved Visualizations: ${store.recommendations.length} found`}
-                       pos={{
-                           top: theme.spacing(1),
-                           bottom: `${theme.spacing(2)}px`,
-                           left: theme.spacing(2) + 500,
-                           right: theme.spacing(1),
-                       }}
-                       bgColor={theme.palette.primary.light}>
-                    <RecommendationsPanel/>
+                    pos={{
+                        top: theme.spacing(1),
+                        bottom: `${theme.spacing(2)}px`,
+                        left: theme.spacing(2) + 500,
+                        right: theme.spacing(1),
+                    }}
+                    bgColor={theme.palette.primary.light}>
+                    <RecommendationsPanel />
                 </Panel>
                 {/* <Panel title="Selected Visualizations"
                        pos={{
@@ -72,9 +73,9 @@ function App({store}) {
                 </Panel> */}
             </AspectRatioKeeper>
         </div>
-        <FigureViewer/>
+        <FigureViewer />
         {/* <TableViewer/> */}
-        <Waiting/>
+        <Waiting />
     </div>;
 }
 
