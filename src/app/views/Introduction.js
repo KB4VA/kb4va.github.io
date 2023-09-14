@@ -12,9 +12,9 @@ function Introduction({ store }) {
 		open={store.isReadMeOpen}
 		maxWidth='lg'
 		fullWidth>
-		<DialogTitle>Introduction to KB4VA Specification</DialogTitle>
+		<DialogTitle>Introduction to VAID</DialogTitle>
 		<DialogContent>
-			<embed 
+			<embed
 				src={packageJson.homepage + "/codebook.pdf#toolbar=0&navpanes=0&scrollbar=0"}
 				style={{width: '100%', height: '800px'}}
 			></embed>

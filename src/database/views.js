@@ -132,8 +132,8 @@ const viewMatchCondition = (view, condition) => {
         sum: 0,
     }]
 
-    match = typeMatchCombine(condition.actions, 
-        condition.targets, 
+    match = typeMatchCombine(condition.actions,
+        condition.targets,
         view.actionTargets);
     if (!match) return [false, {
         vis: 0,
@@ -227,8 +227,8 @@ const queryViewById = viewId => new Promise(resolve => {
             if (view.viewId === viewId)
                 resolve({
                     viewId,
-                    figFile: `https://github.com/KB4VA/data/blob/main/figures/systems/${view.figFile}?raw=true`,
-                    viewFile: `https://github.com/KB4VA/data/blob/main/figures/views/${view.viewFile}?raw=true`,
+                    figFile: `https://github.com/VIS-VAID/data/blob/main/figures/systems/${view.figFile}?raw=true`,
+                    viewFile: `https://github.com/VIS-VAID/data/blob/main/figures/views/${view.viewFile}?raw=true`,
                     specification: view.specification,
                     actionTargets: view.actionTargets,
                     compositions: view.compositions,

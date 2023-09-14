@@ -1,5 +1,5 @@
 const strings = {
-    systemName: "KB4VA: A Knowledge Base of Visualization Design for Visual Analytics",
+    systemName: "VAID: An Index Structure of View Design for Visual Analytics",
 }
 
 export default strings;
