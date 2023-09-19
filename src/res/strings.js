@@ -1,5 +1,5 @@
 const strings = {
-    systemName: "VAID: An Index Structure of View Design for Visual Analytics",
+    systemName: "VAID: Indexing View Designs in Visual Analytics System",
 }
 
 export default strings;

@@ -15,7 +15,7 @@ function Introduction({ store }) {
 		<DialogTitle>Introduction to VAID</DialogTitle>
 		<DialogContent>
 			<embed
-				src={packageJson.homepage + "/codebook.pdf#toolbar=0&navpanes=0&scrollbar=0"}
+				src={packageJson.homepage + "/codebook_VAID.pdf#toolbar=0&navpanes=0&scrollbar=0"}
 				style={{width: '100%', height: '800px'}}
 			></embed>
 			{/* <DialogContentText>
