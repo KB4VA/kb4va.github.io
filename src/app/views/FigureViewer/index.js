@@ -81,9 +81,9 @@ function FigureViewer({ store }) {
     const classes = useStyles();
     const theme = useTheme();
 
-    const { title, caption, viewIds, selected, select } = useFigure(store.viewDetail);
+    const { title, caption, viewIds, keywords, selected, select } = useFigure(store.viewDetail);
     const view = useView(viewIds[selected]);
-    
+
     const beautifyActionTarget = (actionTargets) =>{
         let atArray = []
         actionTargets.forEach((actionTarget) => {
@@ -144,7 +144,7 @@ function FigureViewer({ store }) {
                     <Typography className={classes.title} variant={"subtitle1"}>Channels</Typography>
                     <Typography className={classes.text}
                         title={view.channels.join(", ")}>{view.channels.join(", ")}</Typography>
-                    
+
                     <Typography className={classes.title} variant={"subtitle1"}>Aggregates</Typography>
                     <Typography className={classes.text}
                         title={view.aggregates.join(", ")}>{view.aggregates.join(", ")}</Typography>
@@ -152,6 +152,9 @@ function FigureViewer({ store }) {
                     <Typography className={classes.title} variant={"subtitle1"}>Caption</Typography>
                     <Typography className={classes.text}
                         title={caption}>{caption}</Typography>
+                    <Typography className={classes.title} variant={"subtitle1"}>Keywords</Typography>
+                    <Typography className={classes.keywords}
+                        title={keywords}>{keywords}</Typography>
                 </div>
             </div>
             <div className={classes.viewList}>

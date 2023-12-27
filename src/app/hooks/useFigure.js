@@ -7,6 +7,7 @@ export default function useFigure(props) {
     const [figure, setFigure] = useState({
         title: "",
         caption: "",
+        keywords: "",
         viewIds: [],
     });
 
@@ -23,6 +24,8 @@ export default function useFigure(props) {
               })
           });
     }, [props])
+
+    console.log(figure);
 
     return {
         ...figure,
